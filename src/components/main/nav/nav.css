@@ -1,0 +1,114 @@
+.nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.nav__search{
+    background-color:white;
+    width: 520px;
+    height: 60px;
+    display:flex;
+    align-items:center;
+    box-sizing:border-box;
+    padding:10px 5px;
+    border-radius: 5px;
+    box-shadow:0px 0 8px -4px #888;
+    margin: 20px 0px;
+}
+
+.nav__search-icon {
+    width:50px;
+    font-size:25px;
+    cursor:pointer;
+}
+
+
+.nav__search-input{
+    flex:1;
+    height:100%;
+    border:none;
+    outline:none;
+    font-size:15px;
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: transparent;
+}
+
+.nav__search-input::placeholder{
+    color:gray;
+}
+
+
+.nav__category{
+    
+    border-radius:5px;
+    font-weight:600;
+    position:relative;
+    margin: 20px 0px;
+    
+}
+
+.category__title{
+    width: 220px;
+    border-radius: 5px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0px 15px;
+    font-family: 'Nunito Sans', sans-serif;
+    cursor:pointer;
+    background-color: white;
+    box-shadow:0px 0 8px -4px #888;
+}
+
+.category__options{
+    margin-top:10px;
+    border-radius:5px;
+    background-color: rgb(255, 255, 255);
+    position:absolute;
+    width:100%;
+    box-shadow:0px 0 8px -4px #888;
+}
+
+
+.category__option{
+box-sizing:border-box;
+padding:0px 15px;
+height:40px;
+display:flex;
+align-items:center;
+justify-content: flex-start;
+font-weight: 300;
+cursor:pointer;
+}
+
+.category__option:hover{
+    background-color: rgba(214, 214, 214, 0.363);
+}
+
+
+/* dark mode */
+
+
+/* search */
+.nav__search--dark{
+    background-color: hsl(209, 23%, 22%);
+    color:white;
+}
+
+.nav__search--dark input{
+    color:white;
+}
+
+.nav__search-input::placeholder{
+    color:rgb(211, 211, 211);
+}
+
+.nav__category--dark .category__title, .nav__category--dark .category__options{
+    background-color: hsl(209, 23%, 22%);
+    color:white;
+}

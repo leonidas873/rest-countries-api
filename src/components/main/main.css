@@ -1,0 +1,19 @@
+.main{
+    background-color: hsl(0, 0%, 98%);
+    display:flex;
+    justify-content: center;
+    min-height:calc(100vh - 80px);
+    
+}
+
+.main__content{
+    
+    width:100%;
+    max-width: 1420px;
+    box-sizing:border-box;
+    padding:20px;
+}
+
+.main--dark{
+    background-color: hsl(207, 26%, 17%);
+}

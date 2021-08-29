@@ -1,11 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/header/Header";
+import Main from "./components/main/main";
+import {Switch, Route} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <h1>countries</h1>
+    <Switch>
+      <Route exact path="/">
+      <div className="App">
+      <Header />
+      <Main />
     </div>
+      </Route>
+    </Switch>
+
   );
 }
 

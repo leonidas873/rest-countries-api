@@ -1,0 +1,65 @@
+.catalog__countries{
+display:grid;
+grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+grid-gap:40px;
+box-sizing:border-box;
+padding:30px 0px;
+font-family: 'Nunito Sans', sans-serif;
+color:hsl(200, 15%, 8%);
+}
+
+.catalog__country{
+    border-radius: 7px;
+    box-shadow:2px 4px 10px -4px #888;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.country__flag{
+width:100%;
+border-radius: 7px 7px 0px 0px;
+max-height:50%;
+}
+
+.country__info{
+    height:50%; 
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content: flex-end;
+}
+.country__name{
+font-size:20px;
+font-weight:800;
+box-sizing: border-box;
+padding: 20px;
+}
+
+.country__properties{
+    box-sizing: border-box;
+    padding: 0px 0px 20px 20px;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-size:14px;
+}
+
+.country__property{
+    padding:5px 0px;
+}
+
+.country__property strong{
+    font-weight:800;
+}
+
+
+/* dark mode */
+
+.catalog__country--dark{
+    background-color:hsl(209, 23%, 22%);
+    color:white;
+    box-shadow:2px 4px 10px -4px rgb(27, 27, 27);
+}
