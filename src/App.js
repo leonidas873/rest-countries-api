@@ -5,14 +5,17 @@ import {Switch, Route} from 'react-router-dom';
 
 function App() {
   return (
-    <Switch>
-      <Route exact path="/">
+    
       <div className="App">
+             <Switch>
+        <Route path="/">
+          <h1>home</h1>
       <Header />
-      <Main />
+      <Main /> 
+        </Route>
+        </Switch>
     </div>
-      </Route>
-    </Switch>
+
 
   );
 }
