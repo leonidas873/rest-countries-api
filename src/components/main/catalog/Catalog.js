@@ -1,12 +1,11 @@
 import "./catalog.css";
-import { useEffect, useState } from "react";
-import { fetchAllCountries } from "../../../API.js";
-import { useSelector, useDispatch } from "react-redux";
-import { setAllCountries } from "../../../redux/actions";
+import {  useState } from "react";
+import { useSelector} from "react-redux";
 import Paginate from "./Paginate";
+import { useHistory } from "react-router-dom";
 
 const Catalog = () => {
-  const dispatch = useDispatch();
+  const history = useHistory();
   const allCountries = useSelector((state) => state.allCountries);
   const darkMode = useSelector((state) => state.darkMode);
   const searchQuery = useSelector((state) => state.searchQuery);
@@ -18,7 +17,7 @@ const Catalog = () => {
       country.region.includes(region)
   );
 
-console.log(countries);
+    
   const [currentPage, setCurrentPage] = useState(1);
   const countriesPerPage = 20;
   const pages = Math.ceil(countries.length/countriesPerPage);
@@ -33,18 +32,18 @@ console.log(countries);
     setCurrentPage(value);
   };
 
-  useEffect(() => {
-    fetchAllCountries().then((res) => {
-      dispatch(setAllCountries(res.data));
-      
-    });
-  }, [dispatch]);
+
+
+  const showCountryDetails = (CountryName)=>{
+      history.push(`/${CountryName}`)
+  }
   return (
     <div className="catalog">
       <div className="catalog__countries">
         {currentPageCountries &&
           currentPageCountries.map((country) => (
             <div
+              onClick={()=>showCountryDetails(country.name)}
               className={`catalog__country ${
                 darkMode ? "catalog__country--dark" : ""
               }`}

@@ -27,3 +27,4 @@ export const setRegion = (region) => {
     payload: region
   }
 }
+
