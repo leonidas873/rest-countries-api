@@ -28,3 +28,10 @@ export const setRegion = (region) => {
   }
 }
 
+
+export const setPage = (pageNum) => {
+  return {
+    type:actionTypes.SET_PAGE,
+    payload: pageNum
+  }
+}

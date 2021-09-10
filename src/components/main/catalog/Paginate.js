@@ -1,7 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Pagination } from "@material-ui/lab";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setPage } from "../../../redux/actions";
 
 const darkStyle = makeStyles((theme) => ({
   root: {
@@ -16,8 +17,13 @@ const darkStyle = makeStyles((theme) => ({
     "& .MuiButtonBase-root": {
       backgroundColor: "#4a4780",
       color:'white'
+    },
+    '& .MuiPagination-ul ':{
+      justifyContent:'center',
+      margin:'20px'
     }
-  }
+  },
+  
 }));
 
 const lightStyle = makeStyles((theme) => ({
@@ -43,21 +49,28 @@ const lightStyle = makeStyles((theme) => ({
 }));
 
 const Paginate = ({pages,onChangePage}) => {
+  const dispatch = useDispatch();
   const darkMode = useSelector(state => state.darkMode);
   const classes = darkMode ? darkStyle() : lightStyle();
+  const page = useSelector(state=>state.page);
+
   const onPaginate = (event, value) => {
-    onChangePage(value);
+    dispatch(setPage(value))
+    onChangePage(value);  
   };
+  
+
+
   return (
     <div className={classes.root}>
       <Pagination
-        count={pages}
+        count={pages ? pages : 1}
         boundaryCount={1}
-
         variant="outlined"
         shape="rounded"
         onChange={onPaginate}
-        
+        defaultPage={1} 
+        page={page}
       />
     </div>
   );

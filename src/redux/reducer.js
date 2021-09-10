@@ -4,7 +4,8 @@ const initialState = {
   darkMode: false,
   allCountries: [],
   searchQuery:"",
-  region:""
+  region:"",
+  page:1
  
 };
 
@@ -29,6 +30,11 @@ const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         region:payload
+      }  
+    case actionTypes.SET_PAGE:
+      return{
+        ...state,
+        page:payload
       }  
     default:
       return state;

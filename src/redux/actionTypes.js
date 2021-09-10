@@ -3,5 +3,6 @@ export const actionTypes = {
     SET_ALL_COUNTRIES: 'SET_ALL_COUNTRIES',
     SET_SEARCH_QUERY: 'SET_SEARCH_QUERY',
     SET_REGION: 'SET_REGION',
+    SET_PAGE: 'SET_PAGE'
     
 }
