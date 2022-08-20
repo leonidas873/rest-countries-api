@@ -39,7 +39,7 @@ const CountryDetails = () => {
       </span>
     );
   };
-
+console.log(country)
   return (
     <div className={darkMode ? "country-details--darkMode" : "country-details"}>
       {country && (
@@ -119,8 +119,7 @@ const CountryDetails = () => {
                 {Boolean(country.borders) &&
                   (Boolean(country.borders.length) ? (
                     <Borders />
-                  ) : (
-                    <span>Doesn't have border countries</span>
+                  ) : (<span>Doesn't have border countries</span>
                   ))}
               </div>
             </div>

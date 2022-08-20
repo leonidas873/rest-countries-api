@@ -34,13 +34,14 @@ const Nav = () => {
     dispatch(setPage(1))
   };
 
-  const onSearch = () => {
-    dispatch(setSearchQuery(searchValue));
-    searchValue && (continent
-      ? history.push(`/?region=${continent}&search=${searchValue}`)
-      : history.push(`/?search=${searchValue}`));
-    !searchValue && history.push('/');
-    dispatch(setPage(1))
+  const onSearch = (e) => {
+    dispatch(setSearchQuery(e.target.value));
+    e.target.value && (continent
+      ? history.push(`/?region=${continent}&search=${e.target.value}`)
+      : history.push(`/?search=${e.target.value}`));
+    !e.target.value && history.push('/');
+    dispatch(setPage(1));
+    setSearchValue(e.target.value)
   };
 
   useEffect(() => {
@@ -57,13 +58,13 @@ const Nav = () => {
   return (
     <div className="nav">
       <div className={`nav__search ${darkMode ? "nav__search--dark" : ""}`}>
-        <AiOutlineSearch className="nav__search-icon" onClick={onSearch} />
+        <AiOutlineSearch className="nav__search-icon"  />
         <input
           className="nav__search-input"
           type="text"
           placeholder="Search for a country..."
           value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
+          onChange={onSearch}
         />
       </div>
       <div className={`nav__category ${darkMode ? "nav__category--dark" : ""}`}>
